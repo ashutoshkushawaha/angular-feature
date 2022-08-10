@@ -10,6 +10,7 @@ import { SharkDirective } from './shark.directive';
 export class AppComponent implements AfterViewInit {
   title = 'angularTest';
   extraCreature!: string;
+  testme: string = "";
   @ViewChild(SharkDirective) set appShark(directive: SharkDirective) {
     this.extraCreature = directive.creature;
   }
@@ -19,6 +20,7 @@ export class AppComponent implements AfterViewInit {
     console.log(this.extraCreature); // Dolphin
     this.someInput.nativeElement.value = "ashutosh";
     this.someInput.nativeElement.value = this.pup.whoAmI();
+    this.testme = this.pup.title;
     this.pup.title = "hello ashutosh you learnt how to use viewChild!";
   }
 }
